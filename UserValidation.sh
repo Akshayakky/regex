@@ -6,6 +6,7 @@ echo "Welcome To User Registration Problem "
 read -p "Enter First Name : " FIRSTNAME
 read -p "Enter Last Name : " LASTNAME
 read -p "Enter Email : " EMAIL
+read -p "Enter Mobile Number : " NUMBER
 
 #PATTERN FOR FIRSTNAME
 pattern="^[A-Z][a-zA-Z]{2,}$"
@@ -29,4 +30,12 @@ pattern="^[0-9A-Za-z]+([-_+.][0-9A-Za-z]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a
 if [[ ! $EMAIL =~ $pattern ]]
 then
 	echo "Invalid Email!"
+fi
+
+#PATTERN FOR MOBILE NUMBER
+pattern="^[0-9]{2}[ ][0-9]{10}$"
+
+if [[ ! $NUMBER =~ $pattern ]]
+then
+	echo "Invalid Mobile Number!"
 fi
