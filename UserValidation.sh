@@ -45,7 +45,9 @@ then
 fi
 
 #CHECKING FOR PASSWORD
-if [[ ${#PASSWORD} -ge 6 && "$PASSWORD" == *[[:lower:]]* && "$PASSWORD" == *[[:upper:]]* && "$PASSWORD" == *[0-9]* && "$PASSWORD" == *[^0-9A-Za-z]* ]]
+pattern="^[0-9A-Za-z]*[^A-Za-z0-9][A-Za-z0-9]*$"
+
+if [[ ${#PASSWORD} -ge 8 && "$PASSWORD" == *[[:lower:]]* && "$PASSWORD" == *[[:upper:]]* && "$PASSWORD" == *[0-9]* && "$PASSWORD" =~ $pattern ]]
 then
 	printf ""
 else
