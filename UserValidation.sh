@@ -9,7 +9,7 @@ read -p "Enter First Name : " FIRSTNAME
 read -p "Enter Last Name : " LASTNAME
 read -p "Enter Email : " EMAIL
 read -p "Enter Mobile Number : " NUMBER
-read -p "Set Password : " s
+read -p "Set Password : " PASSWORD
 
 #PATTERN FOR FIRSTNAME
 pattern="^[A-Z][a-zA-Z]{2,}$"
@@ -44,7 +44,7 @@ then
 fi
 
 #CHECKING FOR PASSWORD
-if [[ ${#s} -ge 6 && "$s" == *[A-Z]* ]]
+if [[ ${#PASSWORD} -ge 6 && "$PASSWORD" == *[A-Z]* && "$PASSWORD" == *[0-9]* ]]
 then
 	echo ""
 else
