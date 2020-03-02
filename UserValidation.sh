@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+shopt -u nocasematch
+
 echo "Welcome To User Registration Problem "
 
 #READING FIRSTNAME, LASTNAME AND EMAIL FROM USER
@@ -42,7 +44,7 @@ then
 fi
 
 #CHECKING FOR PASSWORD
-if [[ ${#s} -ge 8 ]]
+if [[ ${#s} -ge 6 && "$s" == *[A-Z]* ]]
 then
 	echo ""
 else
