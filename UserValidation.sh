@@ -4,7 +4,7 @@ shopt -u nocasematch
 
 echo "Welcome To User Registration Problem "
 
-#READING FIRSTNAME, LASTNAME AND EMAIL FROM USER
+#READING FIRSTNAME, LASTNAME, EMAIL, NUMBER AND PASSWORD FROM USER
 read -p "Enter First Name : " FIRSTNAME
 read -p "Enter Last Name : " LASTNAME
 read -p "Enter Email : " EMAIL
@@ -46,7 +46,7 @@ fi
 #CHECKING FOR PASSWORD
 if [[ ${#PASSWORD} -ge 6 && "$PASSWORD" == *[A-Z]* && "$PASSWORD" == *[0-9]* && "$PASSWORD" == *[^A-Za-z0-9]* ]]
 then
-	echo ""
+	printf ""
 else
-	echo "Invalid Password!"
+	printf "Invalid Password!"
 fi
