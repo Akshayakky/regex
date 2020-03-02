@@ -7,7 +7,7 @@ read -p "Enter First Name : " FIRSTNAME
 read -p "Enter Last Name : " LASTNAME
 read -p "Enter Email : " EMAIL
 read -p "Enter Mobile Number : " NUMBER
-read -p "Set Password : " PASSWORD
+read -p "Set Password : " s
 
 #PATTERN FOR FIRSTNAME
 pattern="^[A-Z][a-zA-Z]{2,}$"
@@ -41,10 +41,10 @@ then
 	echo "Invalid Mobile Number!"
 fi
 
-#PATTERN FOR PASSWORD
-pattern="^[0-9A-Za-z]{8,}$"
-
-if [[ ! $PASSWORD =~ $pattern ]]
+#CHECKING FOR PASSWORD
+if [[ ${#s} -ge 8 ]]
 then
+	echo ""
+else
 	echo "Invalid Password!"
 fi
