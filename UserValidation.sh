@@ -44,7 +44,7 @@ then
 fi
 
 #CHECKING FOR PASSWORD
-if [[ ${#PASSWORD} -ge 6 && "$PASSWORD" == *[A-Z]* && "$PASSWORD" == *[0-9]* ]]
+if [[ ${#PASSWORD} -ge 6 && "$PASSWORD" == *[A-Z]* && "$PASSWORD" == *[0-9]* && "$PASSWORD" == *[^A-Za-z0-9]* ]]
 then
 	echo ""
 else
